@@ -51,8 +51,21 @@ $apiInstance = new OpenAPI\Client\Api\ImageApi(
     new GuzzleHttp\Client(),
     $config
 );
-$new_image = {"template":"3fa85f64-5717-4562-b3fc-2c963f66afa6","placeholders":[{"name":"text placeholder name","text":"an example text"},{"name":"image placeholder name","image":"https://example.com/example.jpg"}]}; // \OpenAPI\Client\Model\NewImage | Provide the template and placeholders values that should be rendered in the image
 
+// \OpenAPI\Client\Model\NewImage | Provide the template and placeholders values that should be rendered in the image
+$new_image = {
+    "template":"3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "placeholders": [
+        {
+            "name":"text placeholder name",
+            "text":"an example text"
+        },
+        {
+            "name":"image placeholder name",
+            "image":"https://example.com/example.jpg"
+            }
+        ]
+    }; 
 try {
     $result = $apiInstance->renderImage($new_image);
     print_r($result);
