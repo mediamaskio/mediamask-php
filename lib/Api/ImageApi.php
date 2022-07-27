@@ -4,7 +4,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Mediamask
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -25,7 +25,7 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Api;
+namespace Mediamask\Api;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -34,16 +34,16 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
-use OpenAPI\Client\ApiException;
-use OpenAPI\Client\Configuration;
-use OpenAPI\Client\HeaderSelector;
-use OpenAPI\Client\ObjectSerializer;
+use Mediamask\ApiException;
+use Mediamask\Configuration;
+use Mediamask\HeaderSelector;
+use Mediamask\ObjectSerializer;
 
 /**
  * ImageApi Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Mediamask
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -120,11 +120,11 @@ class ImageApi
      *
      * Render a new image
      *
-     * @param  \OpenAPI\Client\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
+     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Mediamask\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\ValidationError|\OpenAPI\Client\Model\Error
+     * @return \SplFileObject|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error
      */
     public function renderImage($new_image)
     {
@@ -137,11 +137,11 @@ class ImageApi
      *
      * Render a new image
      *
-     * @param  \OpenAPI\Client\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
+     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
-     * @throws \OpenAPI\Client\ApiException on non-2xx response
+     * @throws \Mediamask\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\OpenAPI\Client\Model\Error|\OpenAPI\Client\Model\ValidationError|\OpenAPI\Client\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
     public function renderImageWithHttpInfo($new_image)
     {
@@ -199,47 +199,47 @@ class ImageApi
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Mediamask\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Mediamask\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Mediamask\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 422:
-                    if ('\OpenAPI\Client\Model\ValidationError' === '\SplFileObject') {
+                    if ('\Mediamask\Model\ValidationError' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\ValidationError' !== 'string') {
+                        if ('\Mediamask\Model\ValidationError' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\ValidationError', []),
+                        ObjectSerializer::deserialize($content, '\Mediamask\Model\ValidationError', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 default:
-                    if ('\OpenAPI\Client\Model\Error' === '\SplFileObject') {
+                    if ('\Mediamask\Model\Error' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\OpenAPI\Client\Model\Error' !== 'string') {
+                        if ('\Mediamask\Model\Error' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\OpenAPI\Client\Model\Error', []),
+                        ObjectSerializer::deserialize($content, '\Mediamask\Model\Error', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -274,7 +274,7 @@ class ImageApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Mediamask\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -282,7 +282,7 @@ class ImageApi
                 case 422:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\ValidationError',
+                        '\Mediamask\Model\ValidationError',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -290,7 +290,7 @@ class ImageApi
                 default:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\OpenAPI\Client\Model\Error',
+                        '\Mediamask\Model\Error',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -305,7 +305,7 @@ class ImageApi
      *
      * Render a new image
      *
-     * @param  \OpenAPI\Client\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
+     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -325,7 +325,7 @@ class ImageApi
      *
      * Render a new image
      *
-     * @param  \OpenAPI\Client\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
+     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -374,7 +374,7 @@ class ImageApi
     /**
      * Create request for operation 'renderImage'
      *
-     * @param  \OpenAPI\Client\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
+     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request

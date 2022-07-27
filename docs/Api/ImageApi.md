@@ -1,4 +1,4 @@
-# OpenAPI\Client\ImageApi
+# Mediamask\ImageApi
 
 All URIs are relative to https://mediamask.io/api/v1.
 
@@ -23,16 +23,16 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure Bearer authorization: bearerAuth
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+$config = Mediamask\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new OpenAPI\Client\Api\ImageApi(
+$apiInstance = new Mediamask\Api\ImageApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$new_image = {"template":"3fa85f64-5717-4562-b3fc-2c963f66afa6","placeholders":[{"name":"text placeholder name","text":"an example text"},{"name":"image placeholder name","image":"https://example.com/example.jpg"}]}; // \OpenAPI\Client\Model\NewImage | Provide the template and placeholders values that should be rendered in the image
+$new_image = {"template":"3fa85f64-5717-4562-b3fc-2c963f66afa6","placeholders":[{"name":"text placeholder name","text":"an example text"},{"name":"image placeholder name","image":"https://example.com/example.jpg"}]}; // \Mediamask\Model\NewImage | Provide the template and placeholders values that should be rendered in the image
 
 try {
     $result = $apiInstance->renderImage($new_image);
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **new_image** | [**\OpenAPI\Client\Model\NewImage**](../Model/NewImage.md)| Provide the template and placeholders values that should be rendered in the image |
+ **new_image** | [**\Mediamask\Model\NewImage**](../Model/NewImage.md)| Provide the template and placeholders values that should be rendered in the image |
 
 ### Return type
 

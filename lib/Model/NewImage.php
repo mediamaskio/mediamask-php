@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Mediamask
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
@@ -26,16 +26,16 @@
  * Do not edit the class manually.
  */
 
-namespace OpenAPI\Client\Model;
+namespace Mediamask\Model;
 
 use \ArrayAccess;
-use \OpenAPI\Client\ObjectSerializer;
+use \Mediamask\ObjectSerializer;
 
 /**
  * NewImage Class Doc Comment
  *
  * @category Class
- * @package  OpenAPI\Client
+ * @package  Mediamask
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
@@ -58,7 +58,7 @@ class NewImage implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'template' => 'string',
-        'placeholders' => '\OpenAPI\Client\Model\NewImagePlaceholdersInner[]'
+        'placeholders' => '\Mediamask\Model\NewImagePlaceholdersInner[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class NewImage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets placeholders
      *
-     * @return \OpenAPI\Client\Model\NewImagePlaceholdersInner[]|null
+     * @return \Mediamask\Model\NewImagePlaceholdersInner[]|null
      */
     public function getPlaceholders()
     {
@@ -249,7 +249,7 @@ class NewImage implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets placeholders
      *
-     * @param \OpenAPI\Client\Model\NewImagePlaceholdersInner[]|null $placeholders placeholders
+     * @param \Mediamask\Model\NewImagePlaceholdersInner[]|null $placeholders placeholders
      *
      * @return self
      */
