@@ -1,6 +1,6 @@
 <?php
 /**
- * TextPlaceholderTest
+ * Templates200ResponseDataTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Mediamask\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TextPlaceholderTest Class Doc Comment
+ * Templates200ResponseDataTest Class Doc Comment
  *
  * @category    Class
- * @description TextPlaceholder
+ * @description Templates200ResponseData
  * @package     Mediamask
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TextPlaceholderTest extends TestCase
+class Templates200ResponseDataTest extends TestCase
 {
 
     /**
@@ -71,9 +71,18 @@ class TextPlaceholderTest extends TestCase
     }
 
     /**
-     * Test "TextPlaceholder"
+     * Test "Templates200ResponseData"
      */
-    public function testTextPlaceholder()
+    public function testTemplates200ResponseData()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
@@ -89,9 +98,54 @@ class TextPlaceholderTest extends TestCase
     }
 
     /**
-     * Test attribute "text"
+     * Test attribute "project_id"
      */
-    public function testPropertyText()
+    public function testPropertyProjectId()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "url_api"
+     */
+    public function testPropertyUrlApi()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "signed_url_api"
+     */
+    public function testPropertySignedUrlApi()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "post_api"
+     */
+    public function testPropertyPostApi()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "created_at"
+     */
+    public function testPropertyCreatedAt()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "updated_at"
+     */
+    public function testPropertyUpdatedAt()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

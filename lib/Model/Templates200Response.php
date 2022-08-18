@@ -1,6 +1,6 @@
 <?php
 /**
- * NewImagePlaceholdersInner
+ * Templates200Response
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Mediamask\ObjectSerializer;
 
 /**
- * NewImagePlaceholdersInner Class Doc Comment
+ * Templates200Response Class Doc Comment
  *
  * @category Class
  * @package  Mediamask
@@ -40,7 +40,7 @@ use \Mediamask\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class Templates200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewImage_placeholders_inner';
+    protected static $openAPIModelName = 'templates_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'name' => 'string',
-        'text' => 'string',
-        'url' => 'string'
+        'data' => '\Mediamask\Model\Templates200ResponseData'
     ];
 
     /**
@@ -70,9 +68,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'name' => null,
-        'text' => null,
-        'url' => null
+        'data' => null
     ];
 
     /**
@@ -102,9 +98,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'name' => 'name',
-        'text' => 'text',
-        'url' => 'url'
+        'data' => 'data'
     ];
 
     /**
@@ -113,9 +107,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'name' => 'setName',
-        'text' => 'setText',
-        'url' => 'setUrl'
+        'data' => 'setData'
     ];
 
     /**
@@ -124,9 +116,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'name' => 'getName',
-        'text' => 'getText',
-        'url' => 'getUrl'
+        'data' => 'getData'
     ];
 
     /**
@@ -186,9 +176,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['name'] = $data['name'] ?? null;
-        $this->container['text'] = $data['text'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
+        $this->container['data'] = $data['data'] ?? null;
     }
 
     /**
@@ -200,9 +188,6 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -219,73 +204,25 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets name
+     * Gets data
      *
-     * @return string
+     * @return \Mediamask\Model\Templates200ResponseData|null
      */
-    public function getName()
+    public function getData()
     {
-        return $this->container['name'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets name
+     * Sets data
      *
-     * @param string $name name
+     * @param \Mediamask\Model\Templates200ResponseData|null $data data
      *
      * @return self
      */
-    public function setName($name)
+    public function setData($data)
     {
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets text
-     *
-     * @return string|null
-     */
-    public function getText()
-    {
-        return $this->container['text'];
-    }
-
-    /**
-     * Sets text
-     *
-     * @param string|null $text text
-     *
-     * @return self
-     */
-    public function setText($text)
-    {
-        $this->container['text'] = $text;
-
-        return $this;
-    }
-
-    /**
-     * Gets url
-     *
-     * @return string|null
-     */
-    public function getUrl()
-    {
-        return $this->container['url'];
-    }
-
-    /**
-     * Sets url
-     *
-     * @param string|null $url url
-     *
-     * @return self
-     */
-    public function setUrl($url)
-    {
-        $this->container['url'] = $url;
+        $this->container['data'] = $data;
 
         return $this;
     }

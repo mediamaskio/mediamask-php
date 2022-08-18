@@ -1,6 +1,6 @@
 <?php
 /**
- * NewImagePlaceholdersInner
+ * Templates200ResponseData
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Mediamask\ObjectSerializer;
 
 /**
- * NewImagePlaceholdersInner Class Doc Comment
+ * Templates200ResponseData Class Doc Comment
  *
  * @category Class
  * @package  Mediamask
@@ -40,7 +40,7 @@ use \Mediamask\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class Templates200ResponseData implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewImage_placeholders_inner';
+    protected static $openAPIModelName = 'templates_200_response_data';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
         'name' => 'string',
-        'text' => 'string',
-        'url' => 'string'
+        'project_id' => 'string',
+        'url_api' => 'bool',
+        'signed_url_api' => 'bool',
+        'post_api' => 'bool',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -70,9 +75,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => 'uuid',
         'name' => null,
-        'text' => null,
-        'url' => null
+        'project_id' => 'uuid',
+        'url_api' => null,
+        'signed_url_api' => null,
+        'post_api' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -102,9 +112,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'name' => 'name',
-        'text' => 'text',
-        'url' => 'url'
+        'project_id' => 'project_id',
+        'url_api' => 'url_api',
+        'signed_url_api' => 'signed_url_api',
+        'post_api' => 'post_api',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -113,9 +128,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'name' => 'setName',
-        'text' => 'setText',
-        'url' => 'setUrl'
+        'project_id' => 'setProjectId',
+        'url_api' => 'setUrlApi',
+        'signed_url_api' => 'setSignedUrlApi',
+        'post_api' => 'setPostApi',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -124,9 +144,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'name' => 'getName',
-        'text' => 'getText',
-        'url' => 'getUrl'
+        'project_id' => 'getProjectId',
+        'url_api' => 'getUrlApi',
+        'signed_url_api' => 'getSignedUrlApi',
+        'post_api' => 'getPostApi',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -186,9 +211,14 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['text'] = $data['text'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['url_api'] = $data['url_api'] ?? null;
+        $this->container['signed_url_api'] = $data['signed_url_api'] ?? null;
+        $this->container['post_api'] = $data['post_api'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
     /**
@@ -200,9 +230,6 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -219,9 +246,33 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id The template id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -231,7 +282,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name The template id
      *
      * @return self
      */
@@ -243,49 +294,145 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets text
+     * Gets project_id
      *
      * @return string|null
      */
-    public function getText()
+    public function getProjectId()
     {
-        return $this->container['text'];
+        return $this->container['project_id'];
     }
 
     /**
-     * Sets text
+     * Sets project_id
      *
-     * @param string|null $text text
+     * @param string|null $project_id The template id
      *
      * @return self
      */
-    public function setText($text)
+    public function setProjectId($project_id)
     {
-        $this->container['text'] = $text;
+        $this->container['project_id'] = $project_id;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets url_api
      *
-     * @return string|null
+     * @return bool|null
      */
-    public function getUrl()
+    public function getUrlApi()
     {
-        return $this->container['url'];
+        return $this->container['url_api'];
     }
 
     /**
-     * Sets url
+     * Sets url_api
      *
-     * @param string|null $url url
+     * @param bool|null $url_api The template id
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setUrlApi($url_api)
     {
-        $this->container['url'] = $url;
+        $this->container['url_api'] = $url_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets signed_url_api
+     *
+     * @return bool|null
+     */
+    public function getSignedUrlApi()
+    {
+        return $this->container['signed_url_api'];
+    }
+
+    /**
+     * Sets signed_url_api
+     *
+     * @param bool|null $signed_url_api The template id
+     *
+     * @return self
+     */
+    public function setSignedUrlApi($signed_url_api)
+    {
+        $this->container['signed_url_api'] = $signed_url_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets post_api
+     *
+     * @return bool|null
+     */
+    public function getPostApi()
+    {
+        return $this->container['post_api'];
+    }
+
+    /**
+     * Sets post_api
+     *
+     * @param bool|null $post_api The template id
+     *
+     * @return self
+     */
+    public function setPostApi($post_api)
+    {
+        $this->container['post_api'] = $post_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at The template id
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at The template id
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }

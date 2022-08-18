@@ -1,6 +1,6 @@
 <?php
 /**
- * TextPlaceholderTest
+ * Templates200ResponseTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace Mediamask\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * TextPlaceholderTest Class Doc Comment
+ * Templates200ResponseTest Class Doc Comment
  *
  * @category    Class
- * @description TextPlaceholder
+ * @description Templates200Response
  * @package     Mediamask
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class TextPlaceholderTest extends TestCase
+class Templates200ResponseTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class TextPlaceholderTest extends TestCase
     }
 
     /**
-     * Test "TextPlaceholder"
+     * Test "Templates200Response"
      */
-    public function testTextPlaceholder()
+    public function testTemplates200Response()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "name"
+     * Test attribute "data"
      */
-    public function testPropertyName()
-    {
-        // TODO: implement
-        $this->markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "text"
-     */
-    public function testPropertyText()
+    public function testPropertyData()
     {
         // TODO: implement
         $this->markTestIncomplete('Not implemented');

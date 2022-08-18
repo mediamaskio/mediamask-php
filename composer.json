@@ -4,6 +4,7 @@
     "keywords": [
         "php",
         "sdk",
+        "rest",
         "api",
         "image-generation"
     ],
@@ -12,7 +13,7 @@
     "authors": [
         {
             "name": "Gregor Vostrak",
-            "homepage": "https://mediamask.io/"
+            "homepage": "https://mediamask.io"
         }
     ],
     "require": {

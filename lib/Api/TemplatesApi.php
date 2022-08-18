@@ -1,6 +1,6 @@
 <?php
 /**
- * ImageApi
+ * TemplatesApi
  * PHP version 7.4
  *
  * @category Class
@@ -40,14 +40,14 @@ use Mediamask\HeaderSelector;
 use Mediamask\ObjectSerializer;
 
 /**
- * ImageApi Class Doc Comment
+ * TemplatesApi Class Doc Comment
  *
  * @category Class
  * @package  Mediamask
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class ImageApi
+class TemplatesApi
 {
     /**
      * @var ClientInterface
@@ -116,36 +116,34 @@ class ImageApi
     }
 
     /**
-     * Operation renderImage
+     * Operation templates
      *
-     * Render a new image
+     * Get all tempaltes
      *
-     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \Mediamask\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error
+     * @return \Mediamask\Model\Templates200Response|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error
      */
-    public function renderImage($new_image)
+    public function templates()
     {
-        list($response) = $this->renderImageWithHttpInfo($new_image);
+        list($response) = $this->templatesWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation renderImageWithHttpInfo
+     * Operation templatesWithHttpInfo
      *
-     * Render a new image
+     * Get all tempaltes
      *
-     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \Mediamask\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Mediamask\Model\Templates200Response|\Mediamask\Model\Error|\Mediamask\Model\ValidationError|\Mediamask\Model\Error, HTTP status code, HTTP response headers (array of strings)
      */
-    public function renderImageWithHttpInfo($new_image)
+    public function templatesWithHttpInfo()
     {
-        $request = $this->renderImageRequest($new_image);
+        $request = $this->templatesRequest();
 
         try {
             $options = $this->createHttpClientOption();
@@ -184,17 +182,17 @@ class ImageApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
+                    if ('\Mediamask\Model\Templates200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SplFileObject' !== 'string') {
+                        if ('\Mediamask\Model\Templates200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        ObjectSerializer::deserialize($content, '\Mediamask\Model\Templates200Response', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -245,7 +243,7 @@ class ImageApi
                     ];
             }
 
-            $returnType = '\SplFileObject';
+            $returnType = '\Mediamask\Model\Templates200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -266,7 +264,7 @@ class ImageApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        '\Mediamask\Model\Templates200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -301,18 +299,17 @@ class ImageApi
     }
 
     /**
-     * Operation renderImageAsync
+     * Operation templatesAsync
      *
-     * Render a new image
+     * Get all tempaltes
      *
-     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderImageAsync($new_image)
+    public function templatesAsync()
     {
-        return $this->renderImageAsyncWithHttpInfo($new_image)
+        return $this->templatesAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -321,19 +318,18 @@ class ImageApi
     }
 
     /**
-     * Operation renderImageAsyncWithHttpInfo
+     * Operation templatesAsyncWithHttpInfo
      *
-     * Render a new image
+     * Get all tempaltes
      *
-     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function renderImageAsyncWithHttpInfo($new_image)
+    public function templatesAsyncWithHttpInfo()
     {
-        $returnType = '\SplFileObject';
-        $request = $this->renderImageRequest($new_image);
+        $returnType = '\Mediamask\Model\Templates200Response';
+        $request = $this->templatesRequest();
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -372,23 +368,16 @@ class ImageApi
     }
 
     /**
-     * Create request for operation 'renderImage'
+     * Create request for operation 'templates'
      *
-     * @param  \Mediamask\Model\NewImage $new_image Provide the template and placeholders values that should be rendered in the image (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function renderImageRequest($new_image)
+    public function templatesRequest()
     {
-        // verify the required parameter 'new_image' is set
-        if ($new_image === null || (is_array($new_image) && count($new_image) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $new_image when calling renderImage'
-            );
-        }
 
-        $resourcePath = '/image';
+        $resourcePath = '/templates';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -401,23 +390,17 @@ class ImageApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['image/png', 'application/json']
+                ['application/json']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['image/png', 'application/json'],
-                ['application/json']
+                ['application/json'],
+                []
             );
         }
 
         // for model (json/xml)
-        if (isset($new_image)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \GuzzleHttp\json_encode(ObjectSerializer::sanitizeForSerialization($new_image));
-            } else {
-                $httpBody = $new_image;
-            }
-        } elseif (count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -459,7 +442,7 @@ class ImageApi
 
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            'GET',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
