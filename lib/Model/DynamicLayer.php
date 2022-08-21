@@ -1,6 +1,6 @@
 <?php
 /**
- * NewImagePlaceholdersInner
+ * DynamicLayer
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Mediamask\ObjectSerializer;
 
 /**
- * NewImagePlaceholdersInner Class Doc Comment
+ * DynamicLayer Class Doc Comment
  *
  * @category Class
  * @package  Mediamask
@@ -40,7 +40,7 @@ use \Mediamask\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class DynamicLayer implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'NewImage_placeholders_inner';
+    protected static $openAPIModelName = 'DynamicLayer';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
+        'id' => 'string',
         'name' => 'string',
-        'text' => 'string',
-        'url' => 'string'
+        'type' => 'string',
+        'index' => 'float'
     ];
 
     /**
@@ -70,9 +71,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'id' => 'uuid',
         'name' => null,
-        'text' => null,
-        'url' => null
+        'type' => null,
+        'index' => null
     ];
 
     /**
@@ -102,9 +104,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
+        'id' => 'id',
         'name' => 'name',
-        'text' => 'text',
-        'url' => 'url'
+        'type' => 'type',
+        'index' => 'index'
     ];
 
     /**
@@ -113,9 +116,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
+        'id' => 'setId',
         'name' => 'setName',
-        'text' => 'setText',
-        'url' => 'setUrl'
+        'type' => 'setType',
+        'index' => 'setIndex'
     ];
 
     /**
@@ -124,9 +128,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
+        'id' => 'getId',
         'name' => 'getName',
-        'text' => 'getText',
-        'url' => 'getUrl'
+        'type' => 'getType',
+        'index' => 'getIndex'
     ];
 
     /**
@@ -186,9 +191,10 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
+        $this->container['id'] = $data['id'] ?? null;
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['text'] = $data['text'] ?? null;
-        $this->container['url'] = $data['url'] ?? null;
+        $this->container['type'] = $data['type'] ?? null;
+        $this->container['index'] = $data['index'] ?? null;
     }
 
     /**
@@ -200,9 +206,6 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -219,9 +222,33 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
+     * Gets id
+     *
+     * @return string|null
+     */
+    public function getId()
+    {
+        return $this->container['id'];
+    }
+
+    /**
+     * Sets id
+     *
+     * @param string|null $id The dynamic layer id
+     *
+     * @return self
+     */
+    public function setId($id)
+    {
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
      * Gets name
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -231,7 +258,7 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Sets name
      *
-     * @param string $name name
+     * @param string|null $name The name of the dynamic layer
      *
      * @return self
      */
@@ -243,49 +270,49 @@ class NewImagePlaceholdersInner implements ModelInterface, ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets text
+     * Gets type
      *
      * @return string|null
      */
-    public function getText()
+    public function getType()
     {
-        return $this->container['text'];
+        return $this->container['type'];
     }
 
     /**
-     * Sets text
+     * Sets type
      *
-     * @param string|null $text text
+     * @param string|null $type Type of the dynamic layer. Can be 'image' or 'text'
      *
      * @return self
      */
-    public function setText($text)
+    public function setType($type)
     {
-        $this->container['text'] = $text;
+        $this->container['type'] = $type;
 
         return $this;
     }
 
     /**
-     * Gets url
+     * Gets index
      *
-     * @return string|null
+     * @return float|null
      */
-    public function getUrl()
+    public function getIndex()
     {
-        return $this->container['url'];
+        return $this->container['index'];
     }
 
     /**
-     * Sets url
+     * Sets index
      *
-     * @param string|null $url url
+     * @param float|null $index The position of the dynamic layer
      *
      * @return self
      */
-    public function setUrl($url)
+    public function setIndex($index)
     {
-        $this->container['url'] = $url;
+        $this->container['index'] = $index;
 
         return $this;
     }
