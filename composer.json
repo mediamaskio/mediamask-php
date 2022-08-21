@@ -3,7 +3,7 @@
     "description": "Mediamask PHP API Client for dynamic image generation",
     "keywords": [
         "api",
-        "image-generation"
+        "image-generation",
         "php",
         "sdk",
         "rest",
