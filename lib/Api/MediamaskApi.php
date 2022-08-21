@@ -115,6 +115,28 @@ class MediamaskApi
         return $this->config;
     }
 
+
+    public function getSignedUrl($templateUid, $parameters){
+        $baseUrl = 'https://mediamask.io/image/';
+        $apiKey = $this->config->getAccessToken();
+
+        // Generate URL API Request URL
+        $urlApiRequest = $baseUrl .
+            $templateUid .
+            '?' .
+            http_build_query($parameters);
+
+        // Generate Signed URL
+        $signature = hash('sha256', $urlApiRequest . $apiKey);
+        $parameters['signature'] = $signature;
+        $signedRequestUrl = $baseUrl .
+            $templateUid .
+            '?' .
+            http_build_query($parameters);
+
+        return $signedRequestUrl;
+    }
+
     /**
      * Operation renderImage
      *
@@ -466,26 +488,6 @@ class MediamaskApi
         );
     }
 
-    public function getSignedUrl($templateUid, $parameters){
-        $baseUrl = 'https://mediamask.io/image/';
-        $apiKey = $this->config->getAccessToken();
-
-        // Generate URL API Request URL
-        $urlApiRequest = $baseUrl .
-            $templateUid .
-            '?' .
-            http_build_query($parameters);
-
-        // Generate Signed URL
-        $signature = hash('sha256', $urlApiRequest . $apiKey);
-        $parameters['signature'] = $signature;
-        $signedRequestUrl = $baseUrl .
-            $templateUid .
-            '?' .
-            http_build_query($parameters);
-
-        return $signedRequestUrl;
-    }
 
     /**
      * Operation templates
@@ -821,26 +823,6 @@ class MediamaskApi
         );
     }
 
-    public function getSignedUrl($templateUid, $parameters){
-        $baseUrl = 'https://mediamask.io/image/';
-        $apiKey = $this->config->getAccessToken();
-
-        // Generate URL API Request URL
-        $urlApiRequest = $baseUrl .
-            $templateUid .
-            '?' .
-            http_build_query($parameters);
-
-        // Generate Signed URL
-        $signature = hash('sha256', $urlApiRequest . $apiKey);
-        $parameters['signature'] = $signature;
-        $signedRequestUrl = $baseUrl .
-            $templateUid .
-            '?' .
-            http_build_query($parameters);
-
-        return $signedRequestUrl;
-    }
 
     /**
      * Create http client option
