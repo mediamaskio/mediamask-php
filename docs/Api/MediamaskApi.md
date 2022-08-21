@@ -1,10 +1,11 @@
-# Mediamask\ImageApi
+# Mediamask\MediamaskApi
 
 All URIs are relative to https://mediamask.io/api/v1.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**renderImage()**](ImageApi.md#renderImage) | **POST** /image | Render a new image
+[**renderImage()**](MediamaskApi.md#renderImage) | **POST** /image | Render a new image
+[**templates()**](MediamaskApi.md#templates) | **GET** /templates | Get all tempaltes
 
 
 ## `renderImage()`
@@ -26,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = Mediamask\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
 
 
-$apiInstance = new Mediamask\Api\ImageApi(
+$apiInstance = new Mediamask\Api\MediamaskApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -38,7 +39,7 @@ try {
     $result = $apiInstance->renderImage($new_image);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ImageApi->renderImage: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling MediamaskApi->renderImage: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -60,6 +61,61 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: `application/json`
 - **Accept**: `image/png`, `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `templates()`
+
+```php
+templates(): \Mediamask\Model\Templates200Response
+```
+
+Get all tempaltes
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure Bearer authorization: bearerAuth
+$config = Mediamask\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+
+
+$apiInstance = new Mediamask\Api\MediamaskApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->templates();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MediamaskApi->templates: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Mediamask\Model\Templates200Response**](../Model/Templates200Response.md)
+
+### Authorization
+
+[bearerAuth](../../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

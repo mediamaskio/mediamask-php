@@ -2,11 +2,12 @@
     "name": "mediamaskio/mediamask-php",
     "description": "Mediamask PHP API Client for dynamic image generation",
     "keywords": [
+        "api",
+        "image-generation"
         "php",
         "sdk",
         "rest",
-        "api",
-        "image-generation"
+        "api"
     ],
     "homepage": "https://mediamask.io",
     "license": "mit",
