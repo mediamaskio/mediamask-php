@@ -1,6 +1,6 @@
 <?php
 /**
- * Error
+ * Template
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \Mediamask\ObjectSerializer;
 
 /**
- * Error Class Doc Comment
+ * Template Class Doc Comment
  *
  * @category Class
  * @package  Mediamask
@@ -40,7 +40,7 @@ use \Mediamask\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class Error implements ModelInterface, ArrayAccess, \JsonSerializable
+class Template implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'Template';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'message' => 'string'
+        'id' => 'string',
+        'name' => 'string',
+        'project_id' => 'string',
+        'url_api' => 'bool',
+        'signed_url_api' => 'bool',
+        'post_api' => 'bool',
+        'created_at' => '\DateTime',
+        'updated_at' => '\DateTime'
     ];
 
     /**
@@ -68,7 +75,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'message' => null
+        'id' => 'uuid',
+        'name' => null,
+        'project_id' => 'uuid',
+        'url_api' => null,
+        'signed_url_api' => null,
+        'post_api' => null,
+        'created_at' => 'date-time',
+        'updated_at' => 'date-time'
     ];
 
     /**
@@ -98,7 +112,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'message' => 'message'
+        'id' => 'id',
+        'name' => 'name',
+        'project_id' => 'project_id',
+        'url_api' => 'url_api',
+        'signed_url_api' => 'signed_url_api',
+        'post_api' => 'post_api',
+        'created_at' => 'created_at',
+        'updated_at' => 'updated_at'
     ];
 
     /**
@@ -107,7 +128,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'message' => 'setMessage'
+        'id' => 'setId',
+        'name' => 'setName',
+        'project_id' => 'setProjectId',
+        'url_api' => 'setUrlApi',
+        'signed_url_api' => 'setSignedUrlApi',
+        'post_api' => 'setPostApi',
+        'created_at' => 'setCreatedAt',
+        'updated_at' => 'setUpdatedAt'
     ];
 
     /**
@@ -116,7 +144,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'message' => 'getMessage'
+        'id' => 'getId',
+        'name' => 'getName',
+        'project_id' => 'getProjectId',
+        'url_api' => 'getUrlApi',
+        'signed_url_api' => 'getSignedUrlApi',
+        'post_api' => 'getPostApi',
+        'created_at' => 'getCreatedAt',
+        'updated_at' => 'getUpdatedAt'
     ];
 
     /**
@@ -176,7 +211,14 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['message'] = $data['message'] ?? null;
+        $this->container['id'] = $data['id'] ?? null;
+        $this->container['name'] = $data['name'] ?? null;
+        $this->container['project_id'] = $data['project_id'] ?? null;
+        $this->container['url_api'] = $data['url_api'] ?? null;
+        $this->container['signed_url_api'] = $data['signed_url_api'] ?? null;
+        $this->container['post_api'] = $data['post_api'] ?? null;
+        $this->container['created_at'] = $data['created_at'] ?? null;
+        $this->container['updated_at'] = $data['updated_at'] ?? null;
     }
 
     /**
@@ -188,9 +230,6 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -207,25 +246,193 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets message
+     * Gets id
      *
-     * @return string
+     * @return string|null
      */
-    public function getMessage()
+    public function getId()
     {
-        return $this->container['message'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets message
+     * Sets id
      *
-     * @param string $message message
+     * @param string|null $id The template id
      *
      * @return self
      */
-    public function setMessage($message)
+    public function setId($id)
     {
-        $this->container['message'] = $message;
+        $this->container['id'] = $id;
+
+        return $this;
+    }
+
+    /**
+     * Gets name
+     *
+     * @return string|null
+     */
+    public function getName()
+    {
+        return $this->container['name'];
+    }
+
+    /**
+     * Sets name
+     *
+     * @param string|null $name The template id
+     *
+     * @return self
+     */
+    public function setName($name)
+    {
+        $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets project_id
+     *
+     * @return string|null
+     */
+    public function getProjectId()
+    {
+        return $this->container['project_id'];
+    }
+
+    /**
+     * Sets project_id
+     *
+     * @param string|null $project_id The template id
+     *
+     * @return self
+     */
+    public function setProjectId($project_id)
+    {
+        $this->container['project_id'] = $project_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets url_api
+     *
+     * @return bool|null
+     */
+    public function getUrlApi()
+    {
+        return $this->container['url_api'];
+    }
+
+    /**
+     * Sets url_api
+     *
+     * @param bool|null $url_api The template id
+     *
+     * @return self
+     */
+    public function setUrlApi($url_api)
+    {
+        $this->container['url_api'] = $url_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets signed_url_api
+     *
+     * @return bool|null
+     */
+    public function getSignedUrlApi()
+    {
+        return $this->container['signed_url_api'];
+    }
+
+    /**
+     * Sets signed_url_api
+     *
+     * @param bool|null $signed_url_api The template id
+     *
+     * @return self
+     */
+    public function setSignedUrlApi($signed_url_api)
+    {
+        $this->container['signed_url_api'] = $signed_url_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets post_api
+     *
+     * @return bool|null
+     */
+    public function getPostApi()
+    {
+        return $this->container['post_api'];
+    }
+
+    /**
+     * Sets post_api
+     *
+     * @param bool|null $post_api The template id
+     *
+     * @return self
+     */
+    public function setPostApi($post_api)
+    {
+        $this->container['post_api'] = $post_api;
+
+        return $this;
+    }
+
+    /**
+     * Gets created_at
+     *
+     * @return \DateTime|null
+     */
+    public function getCreatedAt()
+    {
+        return $this->container['created_at'];
+    }
+
+    /**
+     * Sets created_at
+     *
+     * @param \DateTime|null $created_at The template id
+     *
+     * @return self
+     */
+    public function setCreatedAt($created_at)
+    {
+        $this->container['created_at'] = $created_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets updated_at
+     *
+     * @return \DateTime|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->container['updated_at'];
+    }
+
+    /**
+     * Sets updated_at
+     *
+     * @param \DateTime|null $updated_at The template id
+     *
+     * @return self
+     */
+    public function setUpdatedAt($updated_at)
+    {
+        $this->container['updated_at'] = $updated_at;
 
         return $this;
     }
