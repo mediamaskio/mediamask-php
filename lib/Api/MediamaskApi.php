@@ -122,9 +122,12 @@ class MediamaskApi
 
         // Generate URL API Request URL
         $urlApiRequest = $baseUrl .
-            $templateUid .
-            '?' .
+            $templateUid;
+
+        if(count($parameters) > 0){
+            $urlApiRequest .= '?' .
             http_build_query($parameters);
+        }
 
         // Generate Signed URL
         $signature = hash('sha256', $urlApiRequest . $apiKey);
