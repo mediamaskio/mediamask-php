@@ -126,7 +126,7 @@ class MediamaskApi
 
         if(count($parameters) > 0){
             $urlApiRequest .= '?' .
-            http_build_query($parameters, null, null, PHP_QUERY_RFC3986);
+            http_build_query($parameters, '', '&', PHP_QUERY_RFC3986);
         }
 
         // Generate Signed URL
@@ -135,7 +135,7 @@ class MediamaskApi
         $signedRequestUrl = $baseUrl .
             $templateUid .
             '?' .
-            http_build_query($parameters, null, null, PHP_QUERY_RFC3986);
+            http_build_query($parameters, '', '&', PHP_QUERY_RFC3986);
 
         return $signedRequestUrl;
     }
